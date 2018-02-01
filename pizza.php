@@ -34,6 +34,9 @@ if ($_REQUEST) {
 	}
 	$tax = $subtotal*0.1;
 	$total = $subtotal+$tax;
+    $tax = number_format($tax, 2);
+    $subtotal = number_format($subtotal, 2);
+    $total = number_format($total, 2);
 }
 
 ?>
@@ -65,8 +68,11 @@ if ($_REQUEST) {
 			<label>Additional Toppings (+$0.50 each)</label>
 			<div class="checkboxes">
 				<input type="checkbox" name="<?= $key; ?>[toppings][mushrooms]" id="item<?= $key; ?>-mushrooms"><label for="item<?= $key; ?>-mushrooms">Mushrooms</label>
+                <br>
 				<input type="checkbox" name="<?= $key; ?>[toppings][peppers]" id="item<?= $key; ?>-peppers"><label for="item<?= $key; ?>-peppers">Peppers</label>
+                <br>
 				<input type="checkbox" name="<?= $key; ?>[toppings][sausage]" id="item<?= $key; ?>-sausage"><label for="item<?= $key; ?>-sausage">Sausage</label>
+                <br>
 			</div>
 			<?php endforeach; ?>
 			<input type="submit" value="Pizza Me!" id="button">
