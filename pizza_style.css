@@ -209,6 +209,9 @@ i {
 strong {
 	font-weight: bold;
 }
+.confirmation {
+    font-family: 'Karla', sans-serif;
+}
 .center {
 	text-align: center !important;
 	margin: 0 auto;

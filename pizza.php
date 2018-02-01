@@ -28,7 +28,7 @@ if ($_REQUEST) {
 				}
 				$toppings = substr($toppings, 0, -2);
 			}
-			$order .= '<p>'.$item['quantity'].' '.$pizzas[$key]['name'].$multiple.$toppings.'</p>';
+			$order .= '<p class ="confirmation">'.$item['quantity'].' '.$pizzas[$key]['name'].$multiple.$toppings.'</p>';
 			$subtotal = $subtotal+($item['quantity']*$pizzas[$key]['price']);
 		}
 	}
@@ -54,10 +54,11 @@ if ($_REQUEST) {
     <header id="banner"></header>
 	<div id="container">
 		<h1 class="center">Pizza Time, Dog</h1>
+        <br>
 		<?php if ($order): ?>
 		<h2>Your order:</h2>
 		<?= $order; ?>
-		<p><strong>Subtotal:</strong> $<?= $subtotal ?><br><strong>Tax:</strong> $<?= $tax; ?><br><strong>Total:</strong> $<?= $total; ?></p>
+		<p class="confirmation"><strong>Subtotal:</strong> $<?= $subtotal ?><br><strong>Tax:</strong> $<?= $tax; ?><br><strong>Total:</strong> $<?= $total; ?></p>
 		<?php else: ?>
 		<form method="post">
 			<?php foreach($pizzas as $key=>$pizza): ?>
