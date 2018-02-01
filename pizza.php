@@ -44,7 +44,7 @@ if ($_REQUEST) {
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Karla|Pacifico" rel="stylesheet">
 <link href="pizza_style.css" rel="stylesheet">
 <title>Pizza Truck</title>
@@ -52,7 +52,7 @@ if ($_REQUEST) {
 
 <body>
     <header id="banner"></header>
-	<div id="container">
+	<div id="container" class="col-1">
 		<h1 class="center">Pizza Time, Dog</h1>
         <br>
 		<?php if ($order): ?>
@@ -64,7 +64,7 @@ if ($_REQUEST) {
 			<?php foreach($pizzas as $key=>$pizza): ?>
 			<label><?= $pizza['name'].' - $'.$pizza['price']; ?></label>
 			<p class="label">Quantity</p>
-			<input type="number" name="<?= $key; ?>[quantity]" value="0" id="quantity">
+			<input type="number" name="<?= $key; ?>[quantity]" value="0" id="quantity" min="0" pattern="\d*">
             <br>
 			<label>Additional Toppings (+$0.50 each)</label>
 			<div class="checkboxes">
