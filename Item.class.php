@@ -1,6 +1,6 @@
 <?php
 /**
-* Item Class creates item for burger food truck
+* Item Class creates item from the customer's pizza order
 *
 *
 *<code>
